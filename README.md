@@ -9,7 +9,8 @@ Creation of a custom ubuntu image with ccs-cli pre installed onto the ubuntu ima
     rm ubuntu-cloudimg.pkr.hcl
     cd
     mkdir combined-repo
-    mv packer-maas/ubuntu combined-repo/
+    mv packer-maas/ubuntu/* combined-repo/
+    mv packer-maas/ubuntu/.[^.]* combined-repo/ 2>/dev/null
     mv Ubuntu-Custom-Image/* combined-repo/
     mv Ubuntu-Custom-Image/.[^.]* combined-repo/ 2>/dev/null
     cd combined-repo
