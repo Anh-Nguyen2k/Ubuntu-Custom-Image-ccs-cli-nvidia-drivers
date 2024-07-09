@@ -8,6 +8,6 @@ Creation of a custom ubuntu image with ccs-cli pre installed onto the ubuntu ima
     cd packer-maas/ubuntu
     rm ubuntu-cloudimg.pkr.hcl
     cd
-    mv ubuntu-custom-image/ubuntu-cloudimg.pkr.hcl packer-maas/ubuntu
+    mv ubuntu-custom-image-ccs-cli/ubuntu-cloudimg.pkr.hcl packer-maas/ubuntu
     cd packer-maas/ubuntu
     sudo make custom-cloudimg.tar.gz SERIES=jammy
