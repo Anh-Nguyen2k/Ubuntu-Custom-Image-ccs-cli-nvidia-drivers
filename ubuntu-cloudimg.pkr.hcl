@@ -76,7 +76,7 @@ build {
 build {
   name    = "cloudimg.image"
   sources = ["source.qemu.cloudimg"]
-  provisioner "shell {
+  provisioner "shell" {
     inline = [
       "sudo apt-get install python3-pip -y",
       "sudo pip3 install git+https://github.com/cirrascalecloudservices/ccs-cli --force-reinstall"
