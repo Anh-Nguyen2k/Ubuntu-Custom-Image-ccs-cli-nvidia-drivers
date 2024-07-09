@@ -78,10 +78,14 @@ build {
   sources = ["source.qemu.cloudimg"]
   provisioner "shell" {
     inline = [
-      "sudo apt-get install python3-pip -y",
+      "sudo apt-get update",
+      "sudo add-apt-repository universe -y",
+      "sudo apt-get update",
+      "sudo DEBIAN_Frontend=noninteractive apt-get install -y  python3-pip",
       "sudo pip3 install git+https://github.com/cirrascalecloudservices/ccs-cli --force-reinstall"
     ]
   }
+
 
   provisioner "shell" {
     environment_vars = concat(local.proxy_env, ["DEBIAN_FRONTEND=noninteractive"])
