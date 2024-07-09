@@ -3,9 +3,13 @@ Creation of a custom ubuntu image with ccs-cli pre installed onto the ubuntu ima
 
 <h2>Cloning, CD, and creating template</h2>
 
+    sudo apt install qemu-utils libnbd-bin nbdkit fuse2fs qemu-system qemu-system-modules-spice ovmf cloud-image-utils parted
+    curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+    sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+    sudo apt-get update && sudo apt-get install packer
     git clone https://github.com/canonical/packer-maas.git
     cd packer-maas/ubuntu
-    nano ubuntu-cloudimg.pkr.hcl
+    sudo nano ubuntu-cloudimg.pkr.hcl
 
 <h2>Delete packer template and insert code from link below</h2>
 
