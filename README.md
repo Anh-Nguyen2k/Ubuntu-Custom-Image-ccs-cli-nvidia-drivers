@@ -7,6 +7,8 @@ Creation of a custom ubuntu image with ccs-cli pre installed onto the ubuntu ima
     cd packer-maas/ubuntu
     nano ubuntu-cloudimg.pkr.hcl
 
-<h2>Delete packer template and instert code below</h2>
+<h2>Delete packer template and insert code below</h2>
+
+    
 
     
