@@ -17,7 +17,7 @@ Creation of a custom ubuntu image with ccs-cli pre installed onto the ubuntu ima
 
 To save press ctr+o enter then ctr+x
 
-<h2>make image and upload it to maas</h2>
+<h2>Make image and upload it to maas</h2>
 
     sudo make custom-cloudimg.tar.gz SERIES=jammy
     sudo maas admin boot-resources create \
@@ -26,6 +26,9 @@ To save press ctr+o enter then ctr+x
         architecture='amd64/generic' \
         filetype='tgz' \
         content@=custom-cloudimg.tar.gz
-    
+<h2>Might have to do this to ssh into the machine</h2>
+
+    ssh-keygen -f "/home/ubuntu/.ssh/known_hosts" -R "<ip address of machine>"
+    ssh ubuntu@<ip address of machine>
 
     
