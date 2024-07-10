@@ -1,5 +1,5 @@
 # Ubuntu-Custom-Image
-Creation of a custom ubuntu image with ccs-cli pre installed onto the ubuntu image. This is all done on the maas shell that the image is being uploaded to.
+Creation of a custom ubuntu image with ccs-cli pre installed onto the ubuntu image. This is all done in the maas shell that the image is being uploaded to.
 
 <h2>Installing necessary packages, Cloning, CD, and editing template</h2>
 
