@@ -15,7 +15,7 @@ Creation of a custom ubuntu image with ccs-cli pre installed onto the ubuntu ima
 
     https://raw.githubusercontent.com/Quintin-Falk/ubuntu-custom-image-ccs-cli/main/ubuntu-cloudimg.pkr.hcl
 
-To save press ctr+o enter then ctr+x enter
+To save press ctr+o enter then ctr+x
 
 <h2>make image and upload it to maas</h2>
 
