@@ -105,7 +105,7 @@ build {
       "export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}",
       "EOF",
       "sudo tee -a /etc/apt/apt.conf.d/50unattended-upgrades <<EOF",
-      "Unattended-Upgrade::Package-Blacklist {"nvidia";"cuda";"libnvidia";"libcudnn";};",
+      "Unattended-Upgrade::Package-Blacklist {'nvidia';'cuda';'libnvidia';'libcudnn';};",
       "EOF",    ]
   }
 
