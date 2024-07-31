@@ -82,8 +82,31 @@ build {
       "sudo add-apt-repository universe -y",
       "sudo apt-get update",
       "sudo DEBIAN_Frontend=noninteractive apt-get install -y  python3-pip",
-      "sudo pip3 install git+https://github.com/cirrascalecloudservices/ccs-cli --force-reinstall"
-    ]
+      "sudo pip3 install git+https://github.com/cirrascalecloudservices/ccs-cli --force-reinstall",
+      "export CUDA=12-5",
+      "export CUDA_DRIVER=550",
+      "export CUDA_DRIVER_FABRICMANAGER=550",
+      "CUDNN=8.9.7.29-1+cuda12.2",
+      "sudo apt install curl -y",
+      "sudo apt install dpkg -y",
+      ". /etc/os-release",
+      "sudo systemctl set-default multi-user.target",
+      "arch=x86_64",
+      "distro=ubuntu$(echo $VERSION_ID | tr -d .)    ]",
+      "sudo dpkg -i $(basename $(curl -s -w '%{url_effective}' https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb -O)) && sudo apt-get update -y",
+      "sudo apt-get install -y linux-headers-$(uname -r)",
+      "sudo apt-get install cuda-toolkit-$CUDA_DRIVER -y && sudo apt-mark hold cuda-toolkit-$CUDA_DRIVER",
+      "sudo apt-get install cuda-drivers-fabricmanager-$CUDA_DRIVER -y && sudo apt-mark hold cuda-drivers-fabricmanager-$CUDA_DRIVER",
+      "sudo systemctl enable nvidia-fabricmanager",
+      "sudo apt-get install cuda-drivers-$CUDA_DRIVER -y && sudo apt-mark hold cuda-drivers-$CUDA_DRIVER",
+      "sudo apt-get install libcudnn8=$CUDNN -y && sudo apt-mark hold libcudnn8",
+      "sudo tee /etc/profile.d/cirrascale-cuda.sh > /dev/null << 'EOF'",
+      "export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}",
+      "export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}",
+      "EOF",
+      "sudo tee -a /etc/apt/apt.conf.d/50unattended-upgrades <<EOF",
+      "Unattended-Upgrade::Package-Blacklist {"nvidia";"cuda";"libnvidia";"libcudnn";};",
+      "EOF",    ]
   }
 
 
