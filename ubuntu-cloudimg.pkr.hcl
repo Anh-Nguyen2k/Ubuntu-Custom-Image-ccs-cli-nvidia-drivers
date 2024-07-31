@@ -87,7 +87,7 @@ build {
       ". /etc/os-release",
       "sudo systemctl set-default multi-user.target",
       "arch=x86_64",
-      "distro=ubuntu$(echo $VERSION_ID | tr -d .)    ]",
+      "distro=ubuntu$(echo $VERSION_ID | tr -d .)",
       "curl -s -O https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb",
       "sudo dpkg -i cuda-keyring_1.1-1_all.deb",
       "sudo DEBIAN_FRONTEND=noninteractive apt-get update -y",
