@@ -78,11 +78,6 @@ build {
   sources = ["source.qemu.cloudimg"]
   provisioner "shell" {
     inline = [
-      "sudo DEBIAN_FRONTEND=noninteractive apt-get update",
-      "sudo add-apt-repository universe -y",
-      "sudo DEBIAN_FRONTEND=noninteractive apt-get update",
-      "sudo DEBIAN_Frontend=noninteractive apt-get install -y  python3-pip",
-      "DEBIAN_FRONTEND=noninteractive pip3 install git+https://github.com/cirrascalecloudservices/ccs-cli --force-reinstall",
       "export CUDA=12-5",
       "export CUDA_DRIVER=550",
       "export CUDA_DRIVER_FABRICMANAGER=550",
