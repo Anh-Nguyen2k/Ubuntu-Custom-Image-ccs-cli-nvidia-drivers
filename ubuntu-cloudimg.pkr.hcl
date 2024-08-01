@@ -103,7 +103,10 @@ build {
       "EOF",
       "sudo tee -a /etc/apt/apt.conf.d/50unattended-upgrades <<EOF",
       "Unattended-Upgrade::Package-Blacklist {'nvidia';'cuda';'libnvidia';'libcudnn';};",
-      "EOF",    ]
+      "EOF",
+      "sudo DEBIAN_FRONTEND=noninteractive apt-get install python3-pip -y",
+      "sudo pip3 install git+https://github.com/cirrascalecloudservices/ccs-cli --force-reinstall",
+]
   }
 
 
