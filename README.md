@@ -15,7 +15,7 @@ Creation of a custom ubuntu image with ccs-cli and cuda pre installed onto the u
 
     https://raw.githubusercontent.com/Quintin-Falk/ubuntu-custom-image-ccs-cli/main/ubuntu-cloudimg.pkr.hcl
 
-To save press ctr+o enter then ctr+x
+To save: ctr+o, enter, ctr+x
 
 <h2>Make image and upload it to maas</h2>
 
