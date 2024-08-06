@@ -8,8 +8,15 @@ Creation of a custom ubuntu image with ccs-cli and cuda pre installed. This is a
     sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
     sudo apt-get update && sudo apt-get install packer
     git clone https://github.com/canonical/packer-maas.git
+    git clone https://github.com/Quintin-Falk/Ubuntu-Custom-Image-ccs-cli-nvidia-drivers.git
     cd packer-maas/ubuntu
-    sudo nano ubuntu-cloudimg.pkr.hcl
+    sudo rm ubuntu-cloudimg.pkr.hcl
+    cd 
+    cd Ubuntu-Custom-Image-ccs-cli-nvidia-drivers
+    cp ubuntu-cloudimg.pkr.hcl ../packer-maas/ubuntu/
+    cd
+    cd packer-maas/ubuntu
+    sudo make custom-cloudimg.tar.gz SERIES=jammy
 
 <h2>Delete packer template in nano and insert code from link below</h2>
 
