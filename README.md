@@ -3,7 +3,7 @@ Creation of a custom ubuntu image with ccs-cli and cuda pre installed. This is a
 
 <h2>Installing necessary packages, Cloning, CD, and editing template</h2>
 
-    sudo apt install qemu-utils libnbd-bin nbdkit fuse2fs qemu-system qemu-system-modules-spice ovmf cloud-image-utils parted make git -y
+    sudo apt install qemu-utils libnbd-bin nbdkit fuse2fs qemu-system ovmf cloud-image-utils parted make git -y
     curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
     sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
     sudo apt-get update && sudo apt-get install packer
