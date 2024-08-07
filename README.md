@@ -18,7 +18,7 @@ Creation of a custom ubuntu image with ccs-cli and cuda pre installed. This is a
     cd packer-maas/ubuntu
     sudo make custom-cloudimg.tar.gz SERIES=jammy
     
-    wget https://raw.githubusercontent.com/Quintin-Falk/Ubuntu-Custom-Image-ccs-cli-nvidia-drivers/main/ubuntu_cloudimg.sh && chmod +x ubuntu_cloudimg.sh && ./ubuntu_cloudimg.sh
+    # wget https://raw.githubusercontent.com/Quintin-Falk/Ubuntu-Custom-Image-ccs-cli-nvidia-drivers/main/ubuntu_cloudimg.sh && chmod +x ubuntu_cloudimg.sh && ./ubuntu_cloudimg.sh
     sudo maas admin boot-resources create \
         name='custom/ubuntu-tgz' \
         title='Ubuntu Custom TGZ' \
